@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.ruff_cache/
+
+# NOTE: the trained pipeline (models/heart_pipeline.joblib, ~110 KB) and the
+# report PNGs are intentionally COMMITTED so the demo/API deploy out of the box.
+# Regenerate any time with `make train`. Uploaded CSVs and large artifacts:
+uploads/
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+
+# Streamlit
+.streamlit/secrets.toml
