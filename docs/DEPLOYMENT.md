@@ -14,12 +14,19 @@ below works without retraining. Pick based on what you want to show.
 
 ## Recommended: Streamlit Community Cloud (free, ~5 min)
 
-1. Push the repo to GitHub (see `docs/GITHUB_SETUP.md`).
-2. Go to <https://share.streamlit.io> → **New app**.
-3. Select your repo, branch `main`, main file path:
-   `app/streamlit_app.py`.
-4. Click **Deploy**. Streamlit installs `requirements.txt` automatically.
-5. Share the generated `https://<app>.streamlit.app` URL on your resume/LinkedIn.
+1. Push the repo to GitHub (already done).
+2. Go to <https://share.streamlit.io> → sign in with **GitHub** → **New app**.
+3. Select repo `JAGHDHEEP/heart-disease-risk-prediction`, branch `main`,
+   main file path: `app/streamlit_app.py`.
+4. Under **Advanced → App URL**, claim the custom subdomain
+   **`heart-disease-risk-prediction`** so the public URL becomes
+   `https://heart-disease-risk-prediction.streamlit.app` (matches the README badge).
+5. Click **Deploy**. Streamlit installs `requirements.txt` automatically (~2 min).
+6. The README link and `Open in Streamlit` badge now go live — also add the URL
+   to the repo **About → Website** field and your resume/LinkedIn.
+
+> ⚡ One-click shortcut: the **Open in Streamlit** badge in the README pre-fills
+> the repo, branch and main file — you just sign in and confirm.
 
 > The app inserts `src/` onto `sys.path` itself, so no extra config is needed.
 
