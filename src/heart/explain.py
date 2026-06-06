@@ -62,13 +62,13 @@ def explain(features: dict, top_k: int = 11) -> list[dict]:
 
     if explainer is None:
         importances = pipeline.named_steps["clf"].feature_importances_
-        contributions = {f: float(v) for f, v in zip(FEATURES, importances)}
+        contributions = {f: float(v) for f, v in zip(FEATURES, importances, strict=False)}
         signed = False
     else:
         row = pd.DataFrame([clean])[FEATURES]
         shap_values = explainer(row)
         values = np.asarray(shap_values.values).reshape(-1)
-        contributions = {f: float(v) for f, v in zip(FEATURES, values)}
+        contributions = {f: float(v) for f, v in zip(FEATURES, values, strict=False)}
         signed = True
 
     explanation = [

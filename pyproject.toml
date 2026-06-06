@@ -26,3 +26,17 @@ src = ["src", "api", "app", "tests"]
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
 ignore = ["E731"]
+
+# FastAPI uses callables (File, Depends, Query, ...) as argument defaults by
+# design; treat them as immutable so B008 doesn't flag the idiom.
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = [
+    "fastapi.File",
+    "fastapi.Form",
+    "fastapi.Body",
+    "fastapi.Query",
+    "fastapi.Path",
+    "fastapi.Header",
+    "fastapi.Cookie",
+    "fastapi.Depends",
+]

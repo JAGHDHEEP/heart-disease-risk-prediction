@@ -18,12 +18,6 @@ from datetime import datetime, timezone
 
 import joblib
 import numpy as np
-from sklearn.model_selection import (
-    RandomizedSearchCV,
-    StratifiedKFold,
-    cross_val_score,
-    train_test_split,
-)
 from sklearn.metrics import (
     accuracy_score,
     classification_report,
@@ -32,6 +26,12 @@ from sklearn.metrics import (
     precision_score,
     recall_score,
     roc_auc_score,
+)
+from sklearn.model_selection import (
+    RandomizedSearchCV,
+    StratifiedKFold,
+    cross_val_score,
+    train_test_split,
 )
 
 from . import __version__, config
@@ -139,7 +139,7 @@ def _save_plots(pipeline, X_test, y_test) -> None:
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
-        from sklearn.metrics import RocCurveDisplay, ConfusionMatrixDisplay
+        from sklearn.metrics import ConfusionMatrixDisplay, RocCurveDisplay
     except ImportError:  # plotting is optional, never block training
         logger.warning("matplotlib not available — skipping plots")
         return

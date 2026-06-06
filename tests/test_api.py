@@ -11,8 +11,8 @@ pytestmark = pytest.mark.skipif(
 
 @pytest.fixture
 def client():
-    from fastapi.testclient import TestClient
     from api.main import app
+    from fastapi.testclient import TestClient
     return TestClient(app)
 
 

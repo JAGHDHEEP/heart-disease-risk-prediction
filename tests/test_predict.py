@@ -1,8 +1,8 @@
 """Tests for the inference service (requires a trained model artifact)."""
 import pytest
 
-from heart.predict import ModelNotTrainedError, predict
 from heart.config import PIPELINE_PATH
+from heart.predict import predict
 
 pytestmark = pytest.mark.skipif(
     not PIPELINE_PATH.exists(),

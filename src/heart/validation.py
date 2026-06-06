@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from .config import FEATURES, FEATURE_RANGES
+from .config import FEATURE_RANGES, FEATURES
 
 
 class ValidationError(ValueError):
@@ -32,7 +32,9 @@ def validate_features(features: dict) -> dict:
         try:
             value = float(features[f])
         except (TypeError, ValueError):
-            raise ValidationError(f"Feature '{f}' must be numeric, got {features[f]!r}")
+            raise ValidationError(
+                f"Feature '{f}' must be numeric, got {features[f]!r}"
+            ) from None
 
         rng = FEATURE_RANGES[f]
         if not (rng.low <= value <= rng.high):
