@@ -13,8 +13,10 @@ license = { text = "MIT" }
 [tool.setuptools.packages.find]
 where = ["src"]
 
+# "src" makes the `heart` package importable; "." makes the root-level
+# `api` and `app` packages importable for the API smoke tests.
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["src", "."]
 testpaths = ["tests"]
 addopts = "-q"
 

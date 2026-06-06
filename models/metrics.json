@@ -1,6 +1,6 @@
 {
   "package_version": "1.0.0",
-  "trained_at": "2026-05-31T13:03:10.608272+00:00",
+  "trained_at": "2026-06-06T15:09:07.601597+00:00",
   "dataset": "heart_cleveland.csv",
   "n_rows": 303,
   "features": [
